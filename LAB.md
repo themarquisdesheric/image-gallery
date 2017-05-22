@@ -21,6 +21,16 @@ You can use your own URL, or work with these cute bunnies:
 * http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-25__605.jpg
 * http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-110__605.jpg
 
+For now, put the data in a module you can import. Simulate an async get by return a promise from a get method:
+
+```js
+const images = [ /* your image data */ ];
+
+export default {
+  get() { return Promise.resolve(images) }
+}
+```
+
 ## Components
 
 The three image viewer component(s) you should build are:
