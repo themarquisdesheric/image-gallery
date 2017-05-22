@@ -36,14 +36,14 @@ export default {
 The three image viewer component(s) you should build are:
 
 1. "list" 
-  1. tabular list - show the list vertically
-  1. list item - display the title of the image, the link (not the  actual image), and description.  
+    1. tabular list - show the list vertically
+    1. list item - display the title of the image, the link (not the  actual image), and description.  
 1. "thumbnail" -  
-  1. float or inline-block list - show "cards" for each image
-  1. each image card shows a "thumbnail" (~ 100x100 pixel scale) and the title (above or below).
+    1. float or inline-block list - show "cards" for each image
+    1. each image card shows a "thumbnail" (~ 100x100 pixel scale) and the title (above or below).
 1. "gallery" - 
-  1. display one image at a time, have left and right arrows to advance/go back
-  1. Display the title, description and the full-size image.
+    1. display one image at a time, have left and right arrows to advance/go back
+    1. Display the title, description and the full-size image.
 
 Then you need a view selector component, and a top-level app component to put everything in
 
