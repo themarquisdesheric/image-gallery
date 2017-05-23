@@ -47,6 +47,14 @@ The three image viewer component(s) you should build are:
 
 Then you need a view selector component, and a top-level app component to put everything in
 
+## PropTypes
+
+Include PropTypes for all components (that take props)
+
+## Bonus
+
+Implement Container Component Pattern for handling data
+
 ## Testing
 
 You also need to snapshot test:
@@ -54,10 +62,10 @@ You also need to snapshot test:
 * the wrapper component (in each view state)
 
 ## Rubric *20pts*
-- "list" component *2pt*
-- "thumbnail" component *2pt*
-- "gallery" component *2pt*
-- view selector component *2pts*
-- App component and general React setup *2pt*
-- Snapshot tests *8pts* (1 per 4 components)
-- Code quality *2pt*
+- "list" component *1pt*
+- "thumbnail" component *1pt*
+- "gallery" component *1pt*
+- view selector component *1pts*
+- App component and general React setup *1pt*
+- Snapshot tests *4pts* (1 per 4 components)
+- Code quality *1pt*
