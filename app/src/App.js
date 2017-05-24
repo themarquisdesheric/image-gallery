@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import data from './data';
 import List from './List';
+import Thumbnail from './Thumbnail';
 
 class App extends Component {
   constructor() {
@@ -17,9 +18,12 @@ class App extends Component {
   }
 
   render() {
+    const { images } = this.state;
+
     return (
       <div className="App">
-        <List data={this.state.images} />
+        {/*<List data={images} />*/}
+        <Thumbnail data={images} />
       </div>
     );
   }
