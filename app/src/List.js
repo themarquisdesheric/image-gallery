@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class List extends Component {
+
+  static propTypes = {
+    data: PropTypes.array.isRequired
+  }
 
   render() {
     const { data } = this.props;
