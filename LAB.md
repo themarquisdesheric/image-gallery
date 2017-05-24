@@ -54,6 +54,7 @@ Include PropTypes for all components (that take props)
 ## Testing
 
 You also need to snapshot test:
+* your individual three image list components
 * your individual three image view components
 * the wrapper component (in each view state)
 
