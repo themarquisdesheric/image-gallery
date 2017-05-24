@@ -51,10 +51,6 @@ Then you need a view selector component, and a top-level app component to put ev
 
 Include PropTypes for all components (that take props)
 
-## Bonus
-
-Implement Container Component Pattern for handling data
-
 ## Testing
 
 You also need to snapshot test:
