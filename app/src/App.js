@@ -22,8 +22,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        {/*<List data={images} />*/}
-        <Thumbnail data={images} />
+        <List data={images} />
+        {/*<Thumbnail data={images} />*/}
       </div>
     );
   }

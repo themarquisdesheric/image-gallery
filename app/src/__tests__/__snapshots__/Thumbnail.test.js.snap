@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Thumbnail renders thumbnails 1`] = `
+<ul>
+  <li
+    className="Thumbnail"
+  >
+    <div>
+      <img
+        alt="Black & Tan"
+        className="Thumbnail-image"
+        src="http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg"
+      />
+    </div>
+    <div
+      className="Thumbnail-title"
+    >
+      Black & Tan
+    </div>
+  </li>
+  <li
+    className="Thumbnail"
+  >
+    <div>
+      <img
+        alt="Falling Bunny"
+        className="Thumbnail-image"
+        src="http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-25__605.jpg"
+      />
+    </div>
+    <div
+      className="Thumbnail-title"
+    >
+      Falling Bunny
+    </div>
+  </li>
+  <li
+    className="Thumbnail"
+  >
+    <div>
+      <img
+        alt="Marshmellow Puff"
+        className="Thumbnail-image"
+        src="http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-110__605.jpg"
+      />
+    </div>
+    <div
+      className="Thumbnail-title"
+    >
+      Marshmellow Puff
+    </div>
+  </li>
+</ul>
+`;

@@ -1,9 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`List renders a snapshot 1`] = `
-<div
-  className="App"
->
-  <div />
+exports[`List renders a list 1`] = `
+<div>
+  <ul>
+    <li>
+      Black & Tan
+    </li>
+    <li>
+      <a
+        href=""
+      >
+        http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg
+      </a>
+    </li>
+    <li>
+      Seriously heart-melting black and tan bunny... OMG &lt;3
+    </li>
+  </ul>
+  <ul>
+    <li>
+      Falling Bunny
+    </li>
+    <li>
+      <a
+        href=""
+      >
+        http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-25__605.jpg
+      </a>
+    </li>
+    <li>
+      I don't know if this bunny fell and the picture was taken on impact, but I certainly prefer to think of it that way
+    </li>
+  </ul>
+  <ul>
+    <li>
+      Marshmellow Puff
+    </li>
+    <li>
+      <a
+        href=""
+      >
+        http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-110__605.jpg
+      </a>
+    </li>
+    <li>
+      Is it a rodent or a rabbit? I had to look it up to be sure. Then again, I'm still not sure
+    </li>
+  </ul>
 </div>
 `;
