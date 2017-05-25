@@ -13,11 +13,11 @@ class Thumbnail extends Component {
     return (
       <ul>
         {data.map((img, i) => (
-          <li key={i} className="Thumbnail">
+          <li key={i} className='Thumbnail'>
             <div>
-              <img src={img.url} alt={img.title} className="Thumbnail-image"/>
+              <img src={img.url} alt={img.title} className='Thumbnail-image'/>
             </div>
-            <div className="Thumbnail-title">
+            <div className='Thumbnail-title'>
               {img.title}
             </div>
           </li>

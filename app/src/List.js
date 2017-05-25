@@ -18,7 +18,7 @@ class List extends Component {
               {img.title}
             </li>
             <li>
-              <a href="">
+              <a href=''>
                 {img.url}
               </a>
             </li>
