@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import data from './data';
 import ViewSelector from './ViewSelector';
+import AddImage from './AddImage';
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends Component {
       <div className='App'>
         <h1 className='App-header'>Super Cute Bunny Image Gallery</h1>
         <ViewSelector data={images} />
+        <AddImage />
       </div>
     );
   }
