@@ -12,11 +12,11 @@ class Gallery extends Component {
     this.handleLeftButton = this.handleLeftButton.bind(this);
     this.handleRightButton = this.handleRightButton.bind(this);
   }
-  
+
   static propTypes = {
     data: PropTypes.array.isRequired
   }
-  
+
   handleLeftButton() {
     let decrementIndex = this.state.index;
     decrementIndex--;
@@ -32,19 +32,18 @@ class Gallery extends Component {
   }
 
   render() {
-    let currentImage = this.props.data[this.state.index];
+    let { data } = this.props;
 
-    let { title, description, url } = currentImage || 
-    // how can I stop this from breaking upon removing the || ?
-    { title: 'Black & Tan',
-      description: 'Seriously heart-melting black and tan bunny... OMG <3',
-      url: 'http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg'
-    };
+    if (!data.length) return (
+      <div>
+        <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="loading"/>
+      </div>
+    );
 
-    console.log(this.props.data);
+    let currentImage = data[this.state.index];
+    let { title, description, url } = currentImage;
 
     return (
-
       <div className="Gallery">
         <div className="button-container">
           <button onClick={this.handleLeftButton}>&larr;</button>
@@ -53,10 +52,11 @@ class Gallery extends Component {
         <div className="Gallery-view">
           <h2>{title}</h2>
           <p>{description}</p>
-          <img src={url} alt={title}/>
+          <img src={url} alt={title} className="Gallery-image" />
         </div>
       </div>
     );
+
   }
 }
 

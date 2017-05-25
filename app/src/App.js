@@ -3,10 +3,11 @@ import './App.css';
 import data from './data';
 import List from './List';
 import Thumbnail from './Thumbnail';
+import Gallery from './Gallery';
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     
     this.state = {
       images: []
@@ -22,8 +23,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <List data={images} />
+        <h1 className="App-header">Super Cute Bunny Image Gallery</h1>
+        {/*<List data={images} />*/}
         {/*<Thumbnail data={images} />*/}
+        <Gallery data={images} />
       </div>
     );
   }
