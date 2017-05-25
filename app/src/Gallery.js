@@ -5,9 +5,10 @@ class Gallery extends Component {
 
   constructor(props) {
     super(props);
+    
     this.state = {
       index: 0
-    };
+    }
 
     this.handleLeftButton = this.handleLeftButton.bind(this);
     this.handleRightButton = this.handleRightButton.bind(this);
