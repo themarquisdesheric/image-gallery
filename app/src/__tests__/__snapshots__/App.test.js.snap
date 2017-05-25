@@ -4,6 +4,32 @@ exports[`renders a snapshot 1`] = `
 <div
   className="App"
 >
-  <div />
+  <h1
+    className="App-header"
+  >
+    Super Cute Bunny Image Gallery
+  </h1>
+  <div>
+    <div
+      className="button-container"
+    >
+      <button
+        onClick={[Function]}
+      >
+        List
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Thumbnail
+      </button>
+      <button
+        onClick={[Function]}
+      >
+        Gallery
+      </button>
+    </div>
+    <div />
+  </div>
 </div>
 `;

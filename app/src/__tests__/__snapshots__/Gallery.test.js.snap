@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gallery renders a Gallery view for Black & Tan 1`] = `
+<div
+  className="Gallery"
+>
+  <div
+    className="button-container"
+  >
+    <button
+      onClick={[Function]}
+    >
+      ←
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      →
+    </button>
+  </div>
+  <div
+    className="Gallery-view"
+  >
+    <h2>
+      Black & Tan
+    </h2>
+    <p>
+      Seriously heart-melting black and tan bunny... OMG &lt;3
+    </p>
+    <img
+      alt="Black & Tan"
+      className="Gallery-image"
+      src="http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg"
+    />
+  </div>
+</div>
+`;
