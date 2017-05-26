@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import DeleteButton from './DeleteButton';
 
 class List extends Component {
 
@@ -26,11 +27,7 @@ class List extends Component {
               {img.description}
             </li>
             <li>
-              <button onClick={() => onDelete(img._id)}
-                      className="delete-button"
-              >
-                Delete 🗑
-              </button>
+              <DeleteButton onClick={() => onDelete(img._id)} />
             </li>
           </ul>
         ))}
