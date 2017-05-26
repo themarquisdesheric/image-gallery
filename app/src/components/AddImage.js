@@ -37,7 +37,7 @@ class AddImage extends Component {
     const { title, description, url } = this.state;
 
     return (
-      <div className='Add-image'>
+      <div className="Add-image">
         <h2>Add Image</h2>
         <form onSubmit={e => {
           e.preventDefault();
@@ -58,7 +58,7 @@ class AddImage extends Component {
               <input value={url}
                      onChange={this.handleUrlChange}/>
           </label>
-          <button type='submit'>Add</button>
+          <button type="submit">Add</button>
         </form>
       </div>
     );

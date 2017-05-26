@@ -8,22 +8,29 @@ class List extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, onDelete } = this.props;
 
     return (
       <div>
-        {data.map((img, i) => (
-          <ul key={i}>
-            <li>
+        {data.map((img) => (
+          <ul key={img._id}>
+            <li className="list-title">
               {img.title}
             </li>
             <li>
-              <a href=''>
+              <a href="">
                 {img.url}
               </a>
             </li>
             <li>
               {img.description}
+            </li>
+            <li>
+              <button onClick={() => onDelete(img._id)}
+                      className="delete-button"
+              >
+                Delete 🗑
+              </button>
             </li>
           </ul>
         ))}

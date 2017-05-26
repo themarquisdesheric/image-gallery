@@ -37,7 +37,7 @@ class Gallery extends Component {
 
     if (!data.length) return (
       <div>
-        <img src='https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif' alt='loading'/>
+        <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="loading"/>
       </div>
     );
 
@@ -45,15 +45,15 @@ class Gallery extends Component {
     let { title, description, url } = currentImage;
 
     return (
-      <div className='Gallery'>
-        <div className='button-container'>
+      <div className="Gallery">
+        <div className="button-container">
           <button onClick={this.handleLeftButton}>&larr;</button>
           <button onClick={this.handleRightButton}>&rarr;</button>
         </div>
-        <div className='Gallery-view'>
+        <div className="Gallery-view">
           <h2>{title}</h2>
           <p>{description}</p>
-          <img src={url} alt={title} className='Gallery-image' />
+          <img src={url} alt={title} className="Gallery-image" />
         </div>
       </div>
     );

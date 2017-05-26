@@ -35,20 +35,25 @@ class ViewSelector extends Component {
 
   render() {
 
-    let { data } = this.props;
+    let { data, onDelete } = this.props;
     const { CurrentView } = this.state;
 
-    if (!data) return <div>Loading...</div>
-
+    if (!data) return (
+      <div>
+        <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="loading"/>
+      </div>
+    );
 
     return (
       <div>
-        <div className='button-container'>
+        <div className="button-container">
           <button onClick={this.handleListView}>List</button>
           <button onClick={this.handleThumbnailView}>Thumbnail</button>
           <button onClick={this.handleGalleryView}>Gallery</button>
         </div>
-        <CurrentView data={data} />
+        <CurrentView data={data}
+                     onDelete={onDelete}
+        />
       </div>
     );
   }

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import dataApi from './dataApi';
 import ViewSelector from './components/ViewSelector';
 import AddImage from './components/AddImage';
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +13,7 @@ class App extends Component {
     }
 
     this.handleAdd = this.handleAdd.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -28,13 +29,26 @@ class App extends Component {
       });
   }
 
+  handleDelete(id) {
+    dataApi.deleteImage(id)
+      .then(() => {
+        const { images } = this.state;
+        const index = images.findIndex(img => img._id === id);
+
+        images.splice(index, 1)
+        this.setState({ images });
+      });
+  }
+
   render() {
     const { images } = this.state;
 
     return (
-      <div className='App'>
-        <h1 className='App-header'>Super Cute Bunny Image Gallery</h1>
-        <ViewSelector data={images} />
+      <div className="App">
+        <h1 className="App-header">Super Cute Bunny Image Gallery</h1>
+        <ViewSelector data={images}
+                      onDelete={this.handleDelete}
+        />
         <AddImage onAdd={this.handleAdd}/>
       </div>
     );

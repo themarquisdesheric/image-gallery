@@ -37,5 +37,12 @@ export default {
       _id: shortid.generate()
     }
     return Promise.resolve(saved);
+  },
+  deleteImage(id) {
+    const index = images.findIndex(img => img._id === id);
+    
+    if (index > -1) images.splice(index, 1);
+
+    return Promise.resolve(index !== -1);
   }
 }

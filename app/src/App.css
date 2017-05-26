@@ -40,3 +40,11 @@ ul {
 form {
   margin-bottom: 1em;
 }
+
+.list-title {
+  font-weight: bold;
+}
+
+.delete-button {
+  margin-top: 1em;
+}
