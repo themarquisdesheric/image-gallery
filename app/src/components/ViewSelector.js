@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import List from './List';
 import Thumbnail from './Thumbnail';
 import Gallery from './Gallery';
@@ -14,6 +15,10 @@ class ViewSelector extends Component {
     this.handleListView = this.handleListView.bind(this);
     this.handleThumbnailView = this.handleThumbnailView.bind(this);
     this.handleGalleryView = this.handleGalleryView.bind(this);
+  }
+
+  static propTypes = {
+    data: PropTypes.array.isRequired
   }
 
   handleListView() {

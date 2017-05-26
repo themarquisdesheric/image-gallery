@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import shortid from 'shortid';
 
 class AddImage extends Component {
   constructor(props) {
@@ -15,6 +14,10 @@ class AddImage extends Component {
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
     this.handleUrlChange = this.handleUrlChange.bind(this);
+  }
+
+  static propTypes = {
+    onAdd: PropTypes.func.isRequired
   }
 
   handleTitleChange({ target }) {
