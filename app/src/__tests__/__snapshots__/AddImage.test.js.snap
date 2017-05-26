@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddImage renders a form to add images 1`] = `
+<div
+  className="Add-image"
+>
+  <h2>
+    Add Image
+  </h2>
+  <form
+    onSubmit={[Function]}
+  >
+    <label>
+      Title:
+      <input
+        onChange={[Function]}
+        value=""
+      />
+    </label>
+    <label>
+      Description:
+      <input
+        onChange={[Function]}
+        value=""
+      />
+    </label>
+    <label>
+      URL:
+      <input
+        onChange={[Function]}
+        value=""
+      />
+    </label>
+    <button
+      type="submit"
+    >
+      Add
+    </button>
+  </form>
+</div>
+`;
