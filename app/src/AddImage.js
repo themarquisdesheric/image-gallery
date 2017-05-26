@@ -36,7 +36,10 @@ class AddImage extends Component {
     return (
       <div className='Add-image'>
         <h2>Add Image</h2>
-        <form type='submit'>
+        <form onSubmit={e => {
+          e.preventDefault();
+          this.props.onAdd(this.state);
+        }}>
           <label>
             Title:
               <input value={title}

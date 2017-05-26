@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import data from './data';
+import dataApi from './dataApi';
 import ViewSelector from './ViewSelector';
 import AddImage from './AddImage';
 
@@ -11,10 +11,21 @@ class App extends Component {
     this.state = {
       images: []
     }
+
+    this.handleAdd = this.handleAdd.bind(this);
   }
 
   componentDidMount() {
-    data.get().then(images => this.setState({ images }));
+    dataApi.get().then(images => this.setState({ images }));
+  }
+
+  handleAdd(image) {
+    dataApi.addImage(image)
+      .then(img => {
+        this.setState({
+          images: [...this.state.images, img]
+        });
+      });
   }
 
   render() {
@@ -24,7 +35,7 @@ class App extends Component {
       <div className='App'>
         <h1 className='App-header'>Super Cute Bunny Image Gallery</h1>
         <ViewSelector data={images} />
-        <AddImage />
+        <AddImage onAdd={this.handleAdd}/>
       </div>
     );
   }
