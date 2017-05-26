@@ -35,3 +35,111 @@ exports[`Gallery renders a Gallery view for Black & Tan 1`] = `
   </div>
 </div>
 `;
+
+exports[`Gallery renders a Gallery view for Falling Bunny 1`] = `
+<div
+  className="Gallery"
+>
+  <div
+    className="button-container"
+  >
+    <button
+      onClick={[Function]}
+    >
+      ←
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      →
+    </button>
+  </div>
+  <div
+    className="Gallery-view"
+  >
+    <h2>
+      Falling Bunny
+    </h2>
+    <p>
+      I don't know if this bunny fell and the picture was taken on impact, but I certainly prefer to think of it that way
+    </p>
+    <img
+      alt="Falling Bunny"
+      className="Gallery-image"
+      src="http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-25__605.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Gallery renders a Gallery view for Floppy Ears 1`] = `
+<div
+  className="Gallery"
+>
+  <div
+    className="button-container"
+  >
+    <button
+      onClick={[Function]}
+    >
+      ←
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      →
+    </button>
+  </div>
+  <div
+    className="Gallery-view"
+  >
+    <h2>
+      Black & Tan
+    </h2>
+    <p>
+      Seriously heart-melting black and tan bunny... OMG &lt;3
+    </p>
+    <img
+      alt="Black & Tan"
+      className="Gallery-image"
+      src="http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Gallery renders a Gallery view for Marshmellow Puff 1`] = `
+<div
+  className="Gallery"
+>
+  <div
+    className="button-container"
+  >
+    <button
+      onClick={[Function]}
+    >
+      ←
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      →
+    </button>
+  </div>
+  <div
+    className="Gallery-view"
+  >
+    <h2>
+      Marshmellow Puff
+    </h2>
+    <p>
+      Is it a rodent or a rabbit? I had to look it up to be sure. Then again, I'm still not sure
+    </p>
+    <img
+      alt="Marshmellow Puff"
+      className="Gallery-image"
+      src="http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-110__605.jpg"
+    />
+  </div>
+</div>
+`;

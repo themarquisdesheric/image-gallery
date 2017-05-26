@@ -36,3 +36,7 @@ ul {
 .Gallery-image {
   border: 1px solid #222;
 }
+
+form {
+  margin-bottom: 1em;
+}
