@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import dataApi from './dataApi';
-import ViewSelector from './ViewSelector';
-import AddImage from './AddImage';
+import ViewSelector from './components/ViewSelector';
+import AddImage from './components/AddImage';
 
 class App extends Component {
   constructor(props) {
