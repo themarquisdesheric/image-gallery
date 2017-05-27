@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import DeleteButton from './DeleteButton';
 
 class Thumbnail extends Component {
 
@@ -8,7 +9,7 @@ class Thumbnail extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, onDelete } = this.props;
 
     return (
       <ul>
@@ -20,6 +21,7 @@ class Thumbnail extends Component {
             <div className="Thumbnail-title">
               {img.title}
             </div>
+            <DeleteButton onClick={() => onDelete(img._id)} />
           </li>
         ))}
       </ul>
