@@ -6,11 +6,7 @@ class AddImage extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: '',
-      description: '',
-      url: ''
-    }
+    this.state = this.getInitialState();
 
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
@@ -19,6 +15,18 @@ class AddImage extends Component {
 
   static propTypes = {
     onAdd: PropTypes.func.isRequired
+  }
+
+  getInitialState() {
+    return {
+      title: '',
+      description: '',
+      url: ''
+    }
+  }
+
+  reset() {
+    this.setState(this.getInitialState());
   }
 
   handleTitleChange({ target }) {
@@ -42,6 +50,7 @@ class AddImage extends Component {
         <form onSubmit={e => {
           e.preventDefault();
           this.props.onAdd(this.state);
+          this.reset();
         }}>
           <fieldset>
             <legend>
