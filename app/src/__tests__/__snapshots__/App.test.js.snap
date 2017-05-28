@@ -7,7 +7,19 @@ exports[`renders a snapshot 1`] = `
   <h1
     className="App-header"
   >
+    <span
+      aria-label="bunny"
+      role="img"
+    >
+      🐰 
+    </span>
     Super Cute Bunny Image Gallery
+    <span
+      aria-label="bunny"
+      role="img"
+    >
+       🐰
+    </span>
   </h1>
   <div>
     <div
@@ -30,6 +42,69 @@ exports[`renders a snapshot 1`] = `
       </button>
     </div>
     <div />
+  </div>
+  <div
+    className="Add-image"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <fieldset>
+        <legend>
+          <h2
+            className="Add-image-header"
+          >
+            <svg
+              className="Add-image-icon"
+              fill="currentColor"
+              height="1em"
+              preserveAspectRatio="xMidYMid meet"
+              style={
+                Object {
+                  "color": undefined,
+                  "verticalAlign": "middle",
+                }
+              }
+              viewBox="0 0 40 40"
+              width="1em"
+            >
+              <g>
+                <path
+                  d="m20 33.4q5.5 0 9.4-4t4-9.4-4-9.4-9.4-4-9.4 4-4 9.4 4 9.4 9.4 4z m0-30q6.9 0 11.8 4.8t4.8 11.8-4.8 11.8-11.8 4.8-11.8-4.8-4.8-11.8 4.8-11.8 11.8-4.8z m1.6 8.2v6.8h6.8v3.2h-6.8v6.8h-3.2v-6.8h-6.8v-3.2h6.8v-6.8h3.2z"
+                />
+              </g>
+            </svg>
+            Add Image
+          </h2>
+        </legend>
+        <label>
+          Title:
+          <input
+            onChange={[Function]}
+            value=""
+          />
+        </label>
+        <label>
+          Description:
+          <input
+            onChange={[Function]}
+            value=""
+          />
+        </label>
+        <label>
+          URL:
+          <input
+            onChange={[Function]}
+            value=""
+          />
+        </label>
+        <button
+          type="submit"
+        >
+          Add
+        </button>
+      </fieldset>
+    </form>
   </div>
 </div>
 `;

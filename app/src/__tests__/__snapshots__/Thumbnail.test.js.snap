@@ -17,6 +17,12 @@ exports[`Thumbnail renders thumbnails 1`] = `
     >
       Black & Tan
     </div>
+    <button
+      className="delete-button"
+      onClick={[Function]}
+    >
+      Delete 🗑
+    </button>
   </li>
   <li
     className="Thumbnail"
@@ -33,6 +39,12 @@ exports[`Thumbnail renders thumbnails 1`] = `
     >
       Falling Bunny
     </div>
+    <button
+      className="delete-button"
+      onClick={[Function]}
+    >
+      Delete 🗑
+    </button>
   </li>
   <li
     className="Thumbnail"
@@ -49,6 +61,12 @@ exports[`Thumbnail renders thumbnails 1`] = `
     >
       Marshmellow Puff
     </div>
+    <button
+      className="delete-button"
+      onClick={[Function]}
+    >
+      Delete 🗑
+    </button>
   </li>
 </ul>
 `;

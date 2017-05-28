@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Thumbnail from '../Thumbnail';
+import Thumbnail from '../components/Thumbnail';
 import images from './_data';
 
 describe('Thumbnail', () => {

@@ -32,6 +32,10 @@ exports[`Gallery renders a Gallery view for Black & Tan 1`] = `
       className="Gallery-image"
       src="http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg"
     />
+    <br />
+    <DeleteButton
+      onClick={[Function]}
+    />
   </div>
 </div>
 `;
@@ -67,6 +71,10 @@ exports[`Gallery renders a Gallery view for Falling Bunny 1`] = `
       alt="Falling Bunny"
       className="Gallery-image"
       src="http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-25__605.jpg"
+    />
+    <br />
+    <DeleteButton
+      onClick={[Function]}
     />
   </div>
 </div>
@@ -104,6 +112,10 @@ exports[`Gallery renders a Gallery view for Floppy Ears 1`] = `
       className="Gallery-image"
       src="http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg"
     />
+    <br />
+    <DeleteButton
+      onClick={[Function]}
+    />
   </div>
 </div>
 `;
@@ -139,6 +151,10 @@ exports[`Gallery renders a Gallery view for Marshmellow Puff 1`] = `
       alt="Marshmellow Puff"
       className="Gallery-image"
       src="http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-110__605.jpg"
+    />
+    <br />
+    <DeleteButton
+      onClick={[Function]}
     />
   </div>
 </div>

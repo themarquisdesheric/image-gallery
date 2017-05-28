@@ -44,3 +44,93 @@ exports[`View Selector renders the default list view, along with buttons to chan
   />
 </div>
 `;
+
+exports[`View Selector renders the gallery view 1`] = `
+<div>
+  <div
+    className="button-container"
+  >
+    <button
+      onClick={[Function]}
+    >
+      List
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Thumbnail
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Gallery
+    </button>
+  </div>
+  <Gallery
+    data={
+      Array [
+        Object {
+          "description": "Seriously heart-melting black and tan bunny... OMG <3",
+          "title": "Black & Tan",
+          "url": "http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg",
+        },
+        Object {
+          "description": "I don't know if this bunny fell and the picture was taken on impact, but I certainly prefer to think of it that way",
+          "title": "Falling Bunny",
+          "url": "http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-25__605.jpg",
+        },
+        Object {
+          "description": "Is it a rodent or a rabbit? I had to look it up to be sure. Then again, I'm still not sure",
+          "title": "Marshmellow Puff",
+          "url": "http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-110__605.jpg",
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`View Selector renders the thumbnail view 1`] = `
+<div>
+  <div
+    className="button-container"
+  >
+    <button
+      onClick={[Function]}
+    >
+      List
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Thumbnail
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      Gallery
+    </button>
+  </div>
+  <Thumbnail
+    data={
+      Array [
+        Object {
+          "description": "Seriously heart-melting black and tan bunny... OMG <3",
+          "title": "Black & Tan",
+          "url": "http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg",
+        },
+        Object {
+          "description": "I don't know if this bunny fell and the picture was taken on impact, but I certainly prefer to think of it that way",
+          "title": "Falling Bunny",
+          "url": "http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-25__605.jpg",
+        },
+        Object {
+          "description": "Is it a rodent or a rabbit? I had to look it up to be sure. Then again, I'm still not sure",
+          "title": "Marshmellow Puff",
+          "url": "http://static.boredpanda.com/blog/wp-content/uploads/2015/09/cute-bunnies-110__605.jpg",
+        },
+      ]
+    }
+  />
+</div>
+`;

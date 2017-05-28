@@ -3,7 +3,9 @@
 exports[`List renders a list 1`] = `
 <div>
   <ul>
-    <li>
+    <li
+      className="list-title"
+    >
       Black & Tan
     </li>
     <li>
@@ -16,9 +18,19 @@ exports[`List renders a list 1`] = `
     <li>
       Seriously heart-melting black and tan bunny... OMG &lt;3
     </li>
+    <li>
+      <button
+        className="delete-button"
+        onClick={[Function]}
+      >
+        Delete 🗑
+      </button>
+    </li>
   </ul>
   <ul>
-    <li>
+    <li
+      className="list-title"
+    >
       Falling Bunny
     </li>
     <li>
@@ -31,9 +43,19 @@ exports[`List renders a list 1`] = `
     <li>
       I don't know if this bunny fell and the picture was taken on impact, but I certainly prefer to think of it that way
     </li>
+    <li>
+      <button
+        className="delete-button"
+        onClick={[Function]}
+      >
+        Delete 🗑
+      </button>
+    </li>
   </ul>
   <ul>
-    <li>
+    <li
+      className="list-title"
+    >
       Marshmellow Puff
     </li>
     <li>
@@ -45,6 +67,14 @@ exports[`List renders a list 1`] = `
     </li>
     <li>
       Is it a rodent or a rabbit? I had to look it up to be sure. Then again, I'm still not sure
+    </li>
+    <li>
+      <button
+        className="delete-button"
+        onClick={[Function]}
+      >
+        Delete 🗑
+      </button>
     </li>
   </ul>
 </div>
