@@ -16,17 +16,39 @@ ul {
   padding-left: 0;
 }
 
+li {
+  padding: .1em 0;
+}
+
 .button-container {
   padding: .5em 0;
 }
 
 .Add-image {
-  margin-top: 2em;
+  margin: 1em auto 0;
+  padding-top: 1em;
+  width: 60%;
+}
+
+.Add-image-header {
+  padding: 0 .5em;
 }
 
 .Add-image-icon {
   margin-bottom: 5px;
   margin-right: 5px;
+}
+
+fieldset {
+  padding-bottom: 1em;
+}
+
+form {
+  margin-bottom: 1em;
+}
+
+input {
+  margin: 0 1em;
 }
 
 .Thumbnail {
@@ -49,10 +71,6 @@ ul {
 
 .out-of-bunnies {
   color: #f00;
-}
-
-form {
-  margin-bottom: 1em;
 }
 
 .list-title {

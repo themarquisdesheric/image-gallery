@@ -37,9 +37,7 @@ class Gallery extends Component {
   render() {
     let { data, onDelete } = this.props;
 
-    if (!data.length) {
-      return <OutOfBunnies />
-    }
+    if (!data.length) return <OutOfBunnies />
 
     let currentImage = data[this.state.index];
     let { title, description, url, _id } = currentImage;
