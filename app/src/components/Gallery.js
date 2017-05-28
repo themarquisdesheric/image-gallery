@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import DeleteButton from './DeleteButton';
+import OutOfBunnies from './OutOfBunnies';
 
 class Gallery extends Component {
 
@@ -37,13 +38,7 @@ class Gallery extends Component {
     let { data, onDelete } = this.props;
 
     if (!data.length) {
-      return <h1>Add more bunnies!</h1>;
-    } else if (data === null) {
-      return (
-        <div>
-          <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="loading"/>
-        </div>
-      );
+      return <OutOfBunnies />
     }
 
     let currentImage = data[this.state.index];

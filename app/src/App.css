@@ -20,6 +20,15 @@ ul {
   padding: .5em 0;
 }
 
+.Add-image {
+  margin-top: 2em;
+}
+
+.Add-image-icon {
+  margin-bottom: 5px;
+  margin-right: 5px;
+}
+
 .Thumbnail {
   display: inline-block;
   height: 185px;
@@ -34,7 +43,12 @@ ul {
 }
 
 .Gallery-image {
+  max-width: 50%;
   border: 1px solid #222;
+}
+
+.out-of-bunnies {
+  color: #f00;
 }
 
 form {

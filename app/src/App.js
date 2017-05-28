@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import dataApi from './dataApi';
+import AppHeader from './components/AppHeader';
 import ViewSelector from './components/ViewSelector';
 import AddImage from './components/AddImage';
 import './App.css';
@@ -45,7 +46,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <h1 className="App-header">Super Cute Bunny Image Gallery</h1>
+        <AppHeader />
         <ViewSelector data={images}
                       onDelete={this.handleDelete}
         />

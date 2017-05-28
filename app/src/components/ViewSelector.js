@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import LoadingSpinner from './LoadingSpinner';
 import List from './List';
 import Thumbnail from './Thumbnail';
 import Gallery from './Gallery';
@@ -38,11 +39,7 @@ class ViewSelector extends Component {
     let { data, onDelete } = this.props;
     const { CurrentView } = this.state;
 
-    if (!data) return (
-      <div>
-        <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="loading"/>
-      </div>
-    );
+    if (!data) return <LoadingSpinner />
 
     return (
       <div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import MdAddCircleOutline from 'react-icons/lib/md/add-circle-outline';
 
 class AddImage extends Component {
   constructor(props) {
@@ -38,7 +39,10 @@ class AddImage extends Component {
 
     return (
       <div className="Add-image">
-        <h2>Add Image</h2>
+        <h2>
+          <MdAddCircleOutline className="Add-image-icon" />
+          Add Image
+        </h2>
         <form onSubmit={e => {
           e.preventDefault();
           this.props.onAdd(this.state);
