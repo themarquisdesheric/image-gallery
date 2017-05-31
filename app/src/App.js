@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import dataApi from './dataApi';
 import AppHeader from './components/AppHeader';
+import LoadingSpinner from './components/LoadingSpinner';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Albums from './components/Albums';
@@ -48,13 +49,17 @@ class App extends Component {
   render() {
     const { images } = this.state;
 
+    if (!images.superCuteBunnies) return <LoadingSpinner />;
+
     return (
       <Router>
         <div className="App">
           <AppHeader />
-          <Route exact path="/" component={Home} />
-          <Route path="/albums" component={Albums} />
           <Nav />
+          <Route exact path="/" component={Home} />
+          <Route path="/albums" render={(props) => {
+            return <Albums images={images} {...props} />
+          }} />
 
           {/*<ViewSelector data={images}
             onDelete={this.handleDelete}
