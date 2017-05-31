@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import dataApi from './dataApi';
 import AppHeader from './components/AppHeader';
+import Nav from './components/Nav';
+import Home from './components/Home';
 import ViewSelector from './components/ViewSelector';
 import AddImage from './components/AddImage';
 import './App.css';
@@ -8,7 +11,7 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       images: []
     }
@@ -45,13 +48,17 @@ class App extends Component {
     const { images } = this.state;
 
     return (
-      <div className="App">
-        <AppHeader />
-        <ViewSelector data={images}
-                      onDelete={this.handleDelete}
-        />
-        <AddImage onAdd={this.handleAdd}/>
-      </div>
+      <Router>
+        <div className="App">
+          <AppHeader />
+          <Route exact path="/" component={Home} />
+          <Nav />
+          {/*<ViewSelector data={images}
+            onDelete={this.handleDelete}
+          />*/}
+          {/*<AddImage onAdd={this.handleAdd} />*/}
+        </div>
+      </Router>
     );
   }
 }

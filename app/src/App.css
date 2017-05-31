@@ -11,6 +11,11 @@
   color: white;
 }
 
+.Nav-list li {
+  display: inline;
+  padding: 1em;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
