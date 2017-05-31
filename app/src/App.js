@@ -4,8 +4,9 @@ import dataApi from './dataApi';
 import AppHeader from './components/AppHeader';
 import Nav from './components/Nav';
 import Home from './components/Home';
-import ViewSelector from './components/ViewSelector';
-import AddImage from './components/AddImage';
+import Albums from './components/Albums';
+// import ViewSelector from './components/ViewSelector';
+// import AddImage from './components/AddImage';
 import './App.css';
 
 class App extends Component {
@@ -52,7 +53,9 @@ class App extends Component {
         <div className="App">
           <AppHeader />
           <Route exact path="/" component={Home} />
+          <Route path="/albums" component={Albums} />
           <Nav />
+
           {/*<ViewSelector data={images}
             onDelete={this.handleDelete}
           />*/}
