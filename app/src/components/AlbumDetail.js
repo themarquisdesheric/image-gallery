@@ -35,17 +35,16 @@ export default class AlbumDetail extends Component {
   handleDelete(id) {
     dataApi.deleteImage(id)
       .then(() => {
-        const { images } = this.state;
-        const index = images.findIndex(img => img._id === id);
+        const { album } = this.state;
+        const index = album.images.findIndex(img => img._id === id);
 
-        images.splice(index, 1)
-        this.setState({ images });
+        album.images.splice(index, 1)
+        this.setState({ album: {...this.state.album, images: album.images} });
       });
   }
 
   render() {
     const { album } = this.state;
-    console.log(this.props);
 
     if (!album) return <LoadingSpinner />;
 
