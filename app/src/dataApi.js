@@ -1,7 +1,8 @@
 import shortid from 'shortid';
 
-const albums = {
-  superCuteBunnies: {
+const albums = [
+  {
+    name: 'Super Cute Bunnies',
     images: [
       {
         title: 'Black & Tan',
@@ -30,12 +31,16 @@ const albums = {
     ],
     _id: shortid.generate()
   }
-}
+]
 
 export default {
-  get() {
-    return Promise.resolve(Object.assign({}, albums));
+  getAll() {
+    return Promise.resolve(albums.slice());
   },
+  getAlbum(id) {
+    return Promise.resolve(albums.find(album => album._id === id));
+  },
+
   addImage(image) {
     const saved = {
       ...image,

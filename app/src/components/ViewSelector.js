@@ -48,8 +48,9 @@ class ViewSelector extends Component {
           <button onClick={this.handleThumbnailView}>Thumbnail</button>
           <button onClick={this.handleGalleryView}>Gallery</button>
         </div>
-        <CurrentView data={data}
-                     onDelete={onDelete}
+        <CurrentView 
+          data={data}
+          onDelete={onDelete}
         />
       </div>
     );
