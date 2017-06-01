@@ -15,34 +15,11 @@ export default class Albums extends Component {
     this.state = {
       albums: null
     }
-
-    // this.handleAdd = this.handleAdd.bind(this);
-    // this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
     dataApi.getAll().then(albums => this.setState({ albums }));
   }
-
-  // handleAdd(image) {
-  //   dataApi.addImage(image)
-  //     .then(img => {
-  //       this.setState({
-  //         images: [...this.state.images, img]
-  //       });
-  //     });
-  // }
-
-  // handleDelete(id) {
-  //   dataApi.deleteImage(id)
-  //     .then(() => {
-  //       const { images } = this.state;
-  //       const index = images.findIndex(img => img._id === id);
-
-  //       images.splice(index, 1)
-  //       this.setState({ images });
-  //     });
-  // }
 
   render() {
     const { albums } = this.state;

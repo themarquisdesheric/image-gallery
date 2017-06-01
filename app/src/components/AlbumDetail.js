@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
 import dataApi from '../dataApi';
 import LoadingSpinner from './LoadingSpinner';
 import ViewSelector from './ViewSelector';
@@ -12,6 +11,9 @@ export default class AlbumDetail extends Component {
     this.state = {
       album: null
     }
+
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -21,14 +23,37 @@ export default class AlbumDetail extends Component {
       });
   }
 
+  handleAdd(image) {
+    dataApi.addImage(image)
+      .then(img => {
+        this.setState({
+          album: {...this.state.album, images: [...this.state.album.images, img]}
+        });
+      });
+  }
+
+  handleDelete(id) {
+    dataApi.deleteImage(id)
+      .then(() => {
+        const { images } = this.state;
+        const index = images.findIndex(img => img._id === id);
+
+        images.splice(index, 1)
+        this.setState({ images });
+      });
+  }
+
   render() {
     const { album } = this.state;
+    console.log(this.props);
+
     if (!album) return <LoadingSpinner />;
 
     return (
       <div>
         <h2>{album.name}</h2>
-        <ViewSelector data={album.images} />
+        <ViewSelector data={album.images} onDelete={this.handleDelete} />
+        <AddImage onAdd={this.handleAdd}/>
       </div>
     );
   }

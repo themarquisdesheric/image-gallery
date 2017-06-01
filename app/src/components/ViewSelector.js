@@ -10,7 +10,7 @@ class ViewSelector extends Component {
     super(props);
 
     this.state = {
-      CurrentView: List
+      CurrentView: Gallery
     }
 
     this.handleListView = this.handleListView.bind(this);

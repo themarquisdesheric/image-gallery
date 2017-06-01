@@ -42,6 +42,7 @@ export default {
   },
 
   addImage(image) {
+    console.log(image);
     const saved = {
       ...image,
       _id: shortid.generate()
