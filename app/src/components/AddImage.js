@@ -8,9 +8,7 @@ class AddImage extends Component {
 
     this.state = this.getInitialState();
 
-    this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-    this.handleUrlChange = this.handleUrlChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   static propTypes = {
@@ -29,16 +27,12 @@ class AddImage extends Component {
     this.setState(this.getInitialState());
   }
 
-  handleTitleChange({ target }) {
-    this.setState({ title: target.value });
-  }
+  handleChange(event) {
+    const { name, value } = event.target;
 
-  handleDescriptionChange({ target }) {
-    this.setState({ description: target.value });
-  }
-
-  handleUrlChange({ target }) {
-    this.setState({ url: target.value });
+    this.setState({
+      [name]: value
+    });
   }
 
   render() {
@@ -61,18 +55,18 @@ class AddImage extends Component {
             </legend>
             <label>
               Title:
-                <input value={title}
-                onChange={this.handleTitleChange} />
+                <input name="title" value={title}
+                onChange={this.handleChange} />
             </label>
             <label>
               Description:
-                <input value={description}
-                onChange={this.handleDescriptionChange} />
+                <input name="description" value={description}
+                onChange={this.handleChange} />
             </label>
             <label>
               URL:
-                <input value={url}
-                onChange={this.handleUrlChange} />
+                <input name="url" value={url}
+                onChange={this.handleChange} />
             </label>
             <button type="submit">Add</button>
           </fieldset>
