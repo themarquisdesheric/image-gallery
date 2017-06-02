@@ -49,6 +49,7 @@ export default {
       ...image,
       _id: shortid.generate()
     }
+
     return Promise.resolve(saved);
   },
   deleteImage(id) {
@@ -64,7 +65,14 @@ export default {
   },
   addAlbum(album) {
     albums.push({...album, images: [], _id: shortid.generate()});
-
+    
     return Promise.resolve(albums.slice());
+  },
+  deleteAlbum(id) {
+    const index = albums.findIndex(album => album._id === id);
+
+    if (index > -1) albums.splice(index, 1);
+
+    return Promise.resolve(index !== -1);
   }
 }

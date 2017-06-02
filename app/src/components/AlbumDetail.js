@@ -35,10 +35,10 @@ export default class AlbumDetail extends Component {
       .then(() => {
         const { album } = this.state;
         const index = album.images.findIndex(img => img._id === id);
-        const newImages = album.images.slice();
+        const copiedImages = album.images.slice();
 
-        newImages.splice(index, 1)
-        this.setState({ album: {...this.state.album, images: newImages} });
+        copiedImages.splice(index, 1)
+        this.setState({ album: {...this.state.album, images: copiedImages} });
       });
   }
 
