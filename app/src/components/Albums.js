@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import dataApi from '../dataApi';
 import LoadingSpinner from './LoadingSpinner';
 import Album from './Album';
@@ -32,6 +32,8 @@ export default class Albums extends Component {
         
         copiedAlbums.splice(index, 1);
         this.setState({ albums: copiedAlbums });
+
+        if (this.props.location.pathname.endsWith(id)) this.props.history.push('/albums')
       });
   }
 
@@ -54,12 +56,11 @@ export default class Albums extends Component {
             />
           ))}
         </ul>
-        <Route path={`${match.url}/:albumId`} component={AlbumDetail}/>
-        {/* how can I make it so this only renders in the albums view and if the current album is empty? */}
-        {albums ? <AddAlbum onAdd={this.handleAddAlbum} /> : null}
+        <Switch>
+          <Route path={`${match.url}/:albumId`} component={AlbumDetail}/>
+          <Route render={() => <AddAlbum onAdd={this.handleAddAlbum} /> }/> 
+        </Switch>
       </div>
-
-      // if I go to an album and then delete it, the images stay. Moreover, if I click to change albums it doesn't refresh. ComponentWillReceiveProps?
     );
   }
 }

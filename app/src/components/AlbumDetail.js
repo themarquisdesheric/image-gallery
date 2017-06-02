@@ -15,7 +15,15 @@ export default class AlbumDetail extends Component {
   }
 
   componentDidMount() {
-    dataApi.getAlbum(this.props.match.params.albumId)
+    this.getAlbum(this.props.match.params.albumId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.getAlbum(nextProps.match.params.albumId);
+  }
+
+  getAlbum(id) {
+    dataApi.getAlbum(id)
       .then(album => {
         if (album) this.setState({ album });
       });
