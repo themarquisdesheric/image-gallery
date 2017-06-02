@@ -2,7 +2,7 @@
 
 exports[`AddImage renders a form to add images 1`] = `
 <div
-  className="Add-image"
+  className="Add"
 >
   <form
     onSubmit={[Function]}
@@ -10,10 +10,10 @@ exports[`AddImage renders a form to add images 1`] = `
     <fieldset>
       <legend>
         <h2
-          className="Add-image-header"
+          className="Add-header"
         >
           <svg
-            className="Add-image-icon"
+            className="Add-icon"
             fill="currentColor"
             height="1em"
             preserveAspectRatio="xMidYMid meet"
@@ -32,12 +32,13 @@ exports[`AddImage renders a form to add images 1`] = `
               />
             </g>
           </svg>
-          Add Image
+          Add an Image
         </h2>
       </legend>
       <label>
         Title:
         <input
+          name="title"
           onChange={[Function]}
           value=""
         />
@@ -45,6 +46,7 @@ exports[`AddImage renders a form to add images 1`] = `
       <label>
         Description:
         <input
+          name="description"
           onChange={[Function]}
           value=""
         />
@@ -52,6 +54,7 @@ exports[`AddImage renders a form to add images 1`] = `
       <label>
         URL:
         <input
+          name="url"
           onChange={[Function]}
           value=""
         />

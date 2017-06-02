@@ -21,7 +21,7 @@ exports[`View Selector renders the default list view, along with buttons to chan
       Gallery
     </button>
   </div>
-  <List
+  <Gallery
     data={
       Array [
         Object {
