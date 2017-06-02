@@ -16,11 +16,6 @@ class App extends Component {
           <Nav />
           <Route exact path="/" component={Home} />
           <Route path="/albums" component={Albums} />
-
-          {/*<ViewSelector data={images}
-            onDelete={this.handleDelete}
-          />*/}
-          {/*<AddImage onAdd={this.handleAdd} />*/}
         </div>
       </Router>
     );

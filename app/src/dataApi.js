@@ -38,11 +38,13 @@ export default {
     return Promise.resolve(albums.slice());
   },
   getAlbum(id) {
-    return Promise.resolve(albums.find(album => album._id === id));
+    const album = albums.find(album => album._id === id);
+    const images = album ? album.images.slice() : [];
+
+    return Promise.resolve({...album, images});
   },
 
   addImage(image) {
-    console.log(image);
     const saved = {
       ...image,
       _id: shortid.generate()
@@ -50,10 +52,14 @@ export default {
     return Promise.resolve(saved);
   },
   deleteImage(id) {
-    const index = albums.findIndex(img => img._id === id);
+    let index;
 
-    if (index > -1) albums.splice(index, 1);
+    albums.forEach((album, i) => {
+      index = album.images.findIndex(img => img._id === id);
 
+      if (index > -1) albums[i].images.splice(index, 1);
+    });
+    
     return Promise.resolve(index !== -1);
   }
 }
