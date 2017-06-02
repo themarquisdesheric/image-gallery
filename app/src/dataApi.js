@@ -61,5 +61,10 @@ export default {
     });
     
     return Promise.resolve(index !== -1);
+  },
+  addAlbum(album) {
+    albums.push({...album, images: [], _id: shortid.generate()});
+
+    return Promise.resolve(albums.slice());
   }
 }

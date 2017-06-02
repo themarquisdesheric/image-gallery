@@ -14,7 +14,7 @@ class AddAlbum extends Component {
   static propTypes = { onAdd: PropTypes.func.isRequired }
 
   getInitialState() {
-    return { albumName: '' }
+    return { name: '' }
   }
 
   reset() {
@@ -30,7 +30,7 @@ class AddAlbum extends Component {
   }
 
   render() {
-    const { albumName } = this.state;
+    const { name } = this.state;
 
     return (
       <div className="Add">
@@ -49,8 +49,8 @@ class AddAlbum extends Component {
             <label>
               Album Name:
                 <input 
-                  name="albumName" 
-                  value={albumName}
+                  name="name" 
+                  value={name}
                   onChange={this.handleChange}
                 />
             </label>

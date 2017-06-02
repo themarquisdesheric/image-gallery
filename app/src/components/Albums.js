@@ -11,10 +11,16 @@ export default class Albums extends Component {
     super(props);
 
     this.state = { albums: null }
+    this.handleAddAlbum = this.handleAddAlbum.bind(this);
   }
 
   componentDidMount() {
     dataApi.getAll().then(albums => this.setState({ albums }));
+  }
+
+  handleAddAlbum(album) {
+    dataApi.addAlbum(album)
+      .then(albums => this.setState({ albums }));
   }
 
   render() {
@@ -37,7 +43,7 @@ export default class Albums extends Component {
         </ul>
         <Route path={`${match.url}/:albumId`} component={AlbumDetail}/>
         {/* how can I make it so this only renders in the albums view and if the current album is empty? */}
-        {albums ? <AddAlbum /> : null}
+        {albums ? <AddAlbum onAdd={this.handleAddAlbum}/> : null}
       </div>
     );
   }
