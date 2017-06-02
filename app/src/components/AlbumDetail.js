@@ -19,6 +19,7 @@ export default class AlbumDetail extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (this.state.album && this.state.album._id === nextProps.match.params.albumId) return;
     this.getAlbum(nextProps.match.params.albumId);
   }
 
