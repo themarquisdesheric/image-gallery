@@ -61,6 +61,7 @@ export default class AlbumDetail extends Component {
         <ViewSelector 
           data={album.images} 
           onDelete={this.handleDelete}
+          history={this.props.history}
         />
         <AddImage onAdd={this.handleAdd}/>
       </div>

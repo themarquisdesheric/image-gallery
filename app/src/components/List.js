@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 import DeleteButton from './DeleteButton';
 
 class List extends Component {
-  static propTypes = { data: PropTypes.array.isRequired}
+  static propTypes = { 
+    data: PropTypes.array.isRequired,
+    onDelete: PropTypes.func.isRequired
+  }
 
   render() {
     const { data, onDelete } = this.props;

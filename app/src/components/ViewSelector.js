@@ -5,29 +5,25 @@ import List from './List';
 import Thumbnail from './Thumbnail';
 import Gallery from './Gallery';
 
+const views = { List, Thumbnail, Gallery }
+
 class ViewSelector extends Component {
   constructor(props) {
     super(props);
 
     this.state = { CurrentView: Gallery }
 
-    this.handleListView = this.handleListView.bind(this);
-    this.handleThumbnailView = this.handleThumbnailView.bind(this);
-    this.handleGalleryView = this.handleGalleryView.bind(this);
+    this.handleChangeView = this.handleChangeView.bind(this);
   }
 
   static propTypes = { data: PropTypes.array.isRequired }
 
-  handleListView() {
-    this.setState({ CurrentView: List });
-  }
-  
-  handleThumbnailView() {
-    this.setState({ CurrentView: Thumbnail });
-  }
-  
-  handleGalleryView() {
-    this.setState({ CurrentView: Gallery });
+  handleChangeView({ target }) {
+    const view = target.textContent;
+    const View = views[view];
+    this.setState({ CurrentView: View });
+
+    this.props.history.push({ search: `?view=${view}` });
   }
 
   render() {
@@ -39,9 +35,13 @@ class ViewSelector extends Component {
     return (
       <div>
         <div className="button-container">
-          <button onClick={this.handleListView}>List</button>
-          <button onClick={this.handleThumbnailView}>Thumbnail</button>
-          <button onClick={this.handleGalleryView}>Gallery</button>
+          {Object.keys(views).map(view => {
+            return <button 
+                    key={view}
+                    onClick={this.handleChangeView}>
+                      {view}
+                    </button>
+          })}
         </div>
         <CurrentView 
           data={data}

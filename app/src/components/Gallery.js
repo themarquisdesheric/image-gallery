@@ -13,7 +13,10 @@ class Gallery extends Component {
     this.handleGoToNextImage = this.handleGoToNextImage.bind(this);
   }
 
-  static propTypes = { data: PropTypes.array.isRequired }
+  static propTypes = { 
+    data: PropTypes.array.isRequired,
+    onDelete: PropTypes.func.isRequired
+  }
 
   handleGoToPreviousImage() {
     let decrementIndex = this.state.index;
