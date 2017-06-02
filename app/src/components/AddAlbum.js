@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MdAddCircleOutline from 'react-icons/lib/md/add-circle-outline';
 
-class AddImage extends Component {
+class AddAlbum extends Component {
   constructor(props) {
     super(props);
 
@@ -14,11 +14,7 @@ class AddImage extends Component {
   static propTypes = { onAdd: PropTypes.func.isRequired }
 
   getInitialState() {
-    return {
-      title: '',
-      description: '',
-      url: ''
-    }
+    return { albumName: '' }
   }
 
   reset() {
@@ -34,7 +30,7 @@ class AddImage extends Component {
   }
 
   render() {
-    const { title, description, url } = this.state;
+    const { albumName } = this.state;
 
     return (
       <div className="Add">
@@ -47,30 +43,14 @@ class AddImage extends Component {
             <legend>
               <h2 className="Add-header">
                 <MdAddCircleOutline className="Add-icon" />
-                Add an Image
+                Add an album!
               </h2>
             </legend>
             <label>
-              Title:
+              Album Name:
                 <input 
-                  name="title" 
-                  value={title}
-                  onChange={this.handleChange}
-                />
-            </label>
-            <label>
-              Description:
-                <input
-                  name="description"
-                  value={description}
-                  onChange={this.handleChange}
-                />
-            </label>
-            <label>
-              URL:
-                <input
-                  name="url"
-                  value={url}
+                  name="albumName" 
+                  value={albumName}
                   onChange={this.handleChange}
                 />
             </label>
@@ -82,4 +62,4 @@ class AddImage extends Component {
   }
 }
 
-export default AddImage;
+export default AddAlbum;

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import dataApi from '../dataApi';
 import LoadingSpinner from './LoadingSpinner';
+import Album from './Album';
 import AlbumDetail from './AlbumDetail';
-
-function Album({ name, images, url }) {
-  return <li><Link to={url}>{name}</Link></li>;
-}
+import AddAlbum from './AddAlbum';
 
 export default class Albums extends Component {
   constructor(props) {
@@ -38,6 +36,8 @@ export default class Albums extends Component {
           ))}
         </ul>
         <Route path={`${match.url}/:albumId`} component={AlbumDetail}/>
+        {/* how can I make it so this only renders in the albums view and if the current album is empty? */}
+        {albums ? <AddAlbum /> : null}
       </div>
     );
   }
