@@ -58,6 +58,8 @@ export default class Albums extends Component {
         {/* how can I make it so this only renders in the albums view and if the current album is empty? */}
         {albums ? <AddAlbum onAdd={this.handleAddAlbum} /> : null}
       </div>
+
+      // if I go to an album and then delete it, the images stay. Moreover, if I click to change albums it doesn't refresh. ComponentWillReceiveProps?
     );
   }
 }

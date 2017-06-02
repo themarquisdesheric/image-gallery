@@ -34,7 +34,8 @@ class AddAlbum extends Component {
 
     return (
       <div className="Add">
-        <form onSubmit={e => {
+        <form 
+          onSubmit={e => {
           e.preventDefault();
           this.props.onAdd(this.state);
           this.reset();
