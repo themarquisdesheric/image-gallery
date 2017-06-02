@@ -3,17 +3,14 @@ import PropTypes from 'prop-types';
 import DeleteButton from './DeleteButton';
 
 class List extends Component {
-
-  static propTypes = {
-    data: PropTypes.array.isRequired
-  }
+  static propTypes = { data: PropTypes.array.isRequired}
 
   render() {
     const { data, onDelete } = this.props;
 
     return (
       <div>
-        {data.map((img) => (
+        {data.map(img => (
           <ul key={img._id}>
             <li className="list-title">
               {img.title}

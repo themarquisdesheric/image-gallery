@@ -9,18 +9,14 @@ class ViewSelector extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      CurrentView: Gallery
-    }
+    this.state = { CurrentView: Gallery }
 
     this.handleListView = this.handleListView.bind(this);
     this.handleThumbnailView = this.handleThumbnailView.bind(this);
     this.handleGalleryView = this.handleGalleryView.bind(this);
   }
 
-  static propTypes = {
-    data: PropTypes.array.isRequired
-  }
+  static propTypes = { data: PropTypes.array.isRequired }
 
   handleListView() {
     this.setState({ CurrentView: List });
@@ -35,7 +31,6 @@ class ViewSelector extends Component {
   }
 
   render() {
-
     let { data, onDelete } = this.props;
     const { CurrentView } = this.state;
 

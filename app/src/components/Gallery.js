@@ -4,21 +4,16 @@ import DeleteButton from './DeleteButton';
 import OutOfBunnies from './OutOfBunnies';
 
 class Gallery extends Component {
-
   constructor(props) {
     super(props);
     
-    this.state = {
-      index: 0
-    }
+    this.state = { index: 0 }
 
     this.handleGoToPreviousImage = this.handleGoToPreviousImage.bind(this);
     this.handleGoToNextImage = this.handleGoToNextImage.bind(this);
   }
 
-  static propTypes = {
-    data: PropTypes.array.isRequired
-  }
+  static propTypes = { data: PropTypes.array.isRequired }
 
   handleGoToPreviousImage() {
     let decrementIndex = this.state.index;
@@ -51,13 +46,19 @@ class Gallery extends Component {
         <div className="Gallery-view">
           <h2>{title}</h2>
           <p>{description}</p>
-          <img src={url} alt={title} className="Gallery-image" />
+          <img 
+            src={url} 
+            alt={title} 
+            className="Gallery-image" 
+          />
           <br/>
-          <DeleteButton onClick={() => {
-            onDelete(_id);
+          <DeleteButton 
+            onClick={() => {
+              onDelete(_id);
             
-            if (this.state.index === data.length - 1) this.handleGoToPreviousImage();
-          }} />
+              if (this.state.index === data.length - 1) this.handleGoToPreviousImage();
+            }} 
+          />
         </div>
       </div>
     );

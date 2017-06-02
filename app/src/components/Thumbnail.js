@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import DeleteButton from './DeleteButton';
 
 class Thumbnail extends Component {
-
-  static propTypes = {
-    data: PropTypes.array.isRequired
-  }
+  static propTypes = { data: PropTypes.array.isRequired }
 
   render() {
     const { data, onDelete } = this.props;
@@ -14,9 +11,14 @@ class Thumbnail extends Component {
     return (
       <ul>
         {data.map((img, i) => (
-          <li key={i} className="Thumbnail">
+          <li key={i} 
+              className="Thumbnail"
+          >
             <div>
-              <img src={img.url} alt={img.title} className="Thumbnail-image"/>
+              <img src={img.url} 
+                   alt={img.title} 
+                   className="Thumbnail-image"
+              />
             </div>
             <div className="Thumbnail-title">
               {img.title}

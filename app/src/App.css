@@ -11,6 +11,10 @@
   color: white;
 }
 
+.App-header span {
+  margin: 0 20px;
+}
+
 .Nav-list {
   background-color: #fff;
   margin: 0;
@@ -20,6 +24,10 @@
 .Nav-list li {
   display: inline;
   padding: 1em;
+}
+
+.selected {
+  font-weight: bold;
 }
 
 ul {

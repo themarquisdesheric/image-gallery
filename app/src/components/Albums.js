@@ -12,9 +12,7 @@ export default class Albums extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      albums: null
-    }
+    this.state = { albums: null }
   }
 
   componentDidMount() {

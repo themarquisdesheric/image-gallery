@@ -8,9 +8,7 @@ export default class AlbumDetail extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      album: null
-    }
+    this.state = { album: null }
 
     this.handleAdd = this.handleAdd.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
@@ -42,7 +40,6 @@ export default class AlbumDetail extends Component {
         newImages.splice(index, 1)
         this.setState({ album: {...this.state.album, images: newImages} });
       });
-
   }
 
   render() {
@@ -53,7 +50,10 @@ export default class AlbumDetail extends Component {
     return (
       <div>
         <h2>{album.name}</h2>
-        <ViewSelector data={album.images} onDelete={this.handleDelete} />
+        <ViewSelector 
+          data={album.images} 
+          onDelete={this.handleDelete}
+        />
         <AddImage onAdd={this.handleAdd}/>
       </div>
     );

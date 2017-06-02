@@ -1,12 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
   return (
     <nav>
       <ul className="Nav-list">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/albums">Albums</Link></li>
+        <li>
+          <NavLink 
+            exact 
+            to="/" 
+            activeClassName="selected"
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink 
+            to="/albums" 
+            activeClassName="selected"
+          >
+            Albums
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

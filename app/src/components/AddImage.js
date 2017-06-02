@@ -11,9 +11,7 @@ class AddImage extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  static propTypes = {
-    onAdd: PropTypes.func.isRequired
-  }
+  static propTypes = { onAdd: PropTypes.func.isRequired }
 
   getInitialState() {
     return {
@@ -36,7 +34,6 @@ class AddImage extends Component {
   }
 
   render() {
-
     const { title, description, url } = this.state;
 
     return (
@@ -55,18 +52,27 @@ class AddImage extends Component {
             </legend>
             <label>
               Title:
-                <input name="title" value={title}
-                onChange={this.handleChange} />
+                <input 
+                  name="title" 
+                  value={title}
+                  onChange={this.handleChange}
+                />
             </label>
             <label>
               Description:
-                <input name="description" value={description}
-                onChange={this.handleChange} />
+                <input
+                  name="description"
+                  value={description}
+                  onChange={this.handleChange}
+                />
             </label>
             <label>
               URL:
-                <input name="url" value={url}
-                onChange={this.handleChange} />
+                <input
+                  name="url"
+                  value={url}
+                  onChange={this.handleChange}
+                />
             </label>
             <button type="submit">Add</button>
           </fieldset>
