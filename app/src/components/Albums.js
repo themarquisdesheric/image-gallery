@@ -10,13 +10,17 @@ export default class Albums extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { albums: null }
+    this.state = { albums: null };
+
     this.handleAddAlbum = this.handleAddAlbum.bind(this);
     this.handleDeleteAlbum = this.handleDeleteAlbum.bind(this);
   }
 
   componentDidMount() {
-    dataApi.getAll().then(albums => this.setState({ albums }));
+    // dataApi.getAll().then(albums => this.setState({ albums }));
+    fetch('/albums')
+      .then(res => res.json())
+      .then(res => console.log(res));
   }
 
   handleAddAlbum(album) {

@@ -1,1 +1,0 @@
-// wait until express is up and running to connect db
