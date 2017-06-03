@@ -3,6 +3,8 @@ import renderer from 'react-test-renderer';
 import shortid from 'shortid';
 import List from '../components/List';
 
+function onDelete() {}
+
 const images = [
   {
     title: 'Black & Tan',
@@ -14,7 +16,7 @@ const images = [
 
 describe('List', () => {
   it('renders a list', () => {
-    const tree = renderer.create(<List data={images}/>).toJSON();
+    const tree = renderer.create(<List data={images} onDelete={onDelete} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
