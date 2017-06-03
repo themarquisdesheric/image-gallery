@@ -1,5 +1,7 @@
 import shortid from 'shortid';
 
+//this has to be module.exports, not export default
+
 const albums = [
   {
     name: 'Super Cute Bunnies',
@@ -65,7 +67,7 @@ export default {
   },
   addAlbum(album) {
     albums.push({...album, images: [], _id: shortid.generate()});
-    
+
     return Promise.resolve(albums.slice());
   },
   deleteAlbum(id) {

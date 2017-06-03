@@ -1,7 +1,6 @@
 {
   "name": "image-gallery",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "cd app && npm i && npm test"
@@ -15,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/themarquisdesheric/image-gallery/issues"
   },
-  "homepage": "https://github.com/themarquisdesheric/image-gallery#readme"
+  "homepage": "https://github.com/themarquisdesheric/image-gallery#readme",
+  "dependencies": {},
+  "devDependencies": {},
+  "description": ""
 }
