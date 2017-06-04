@@ -18,33 +18,6 @@ import AddAlbum from './AddAlbum';
     //     if (this.props.location.pathname.endsWith(id)) this.props.history.push('/albums');
     //   });
 
-  /*render() {
-    const { albums } = this.state;
-    const { match } = this.props;
-
-    if (!albums) return <LoadingSpinner />;
-
-    return (
-      <div>
-        <h2>Albums</h2>
-        <ul>
-          {albums.map(album => (
-            <Album 
-              key={album._id}
-              {...album}
-              url={`${match.url}/${album._id}`}
-              onDelete={this.handleDeleteAlbum}
-            />
-          ))}
-        </ul>
-        <Switch>
-          <Route path={`${match.url}/:albumId`} component={AlbumDetail}/>
-          <Route render={() => <AddAlbum onAdd={this.handleAddAlbum} /> }/> 
-        </Switch>
-      </div>
-    );
-  }*/
-
 function Albums({ albums, match, onAdd, onDelete }) {
   return (
     <div>

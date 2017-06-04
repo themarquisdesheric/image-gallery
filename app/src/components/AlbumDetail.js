@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import albumsApi from '../services/albumsApi';
 import LoadingSpinner from './LoadingSpinner';
 import ViewSelector from './ViewSelector';
 import AddImage from './AddImage';
@@ -23,8 +24,7 @@ export default class AlbumDetail extends Component {
   }
 
   getAlbum(id) {
-    fetch(`/albums/${id}`)
-      .then(res => res.json())
+    albumsApi.getAlbum(id)
       .then(album => {
         if (album) this.setState({ album });
       });

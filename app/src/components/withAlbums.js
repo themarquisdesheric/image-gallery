@@ -29,7 +29,7 @@ export default function withAlbums(ComposedComponent) {
     }
 
     handleDeleteAlbum(id) {
-      albumsApi.removeAlbum(id)
+      return albumsApi.removeAlbum(id)
         .then(res => console.log('RESULT FROM WITHALBUMS', res))
         .catch(err => console.log(err));
     }

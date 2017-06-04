@@ -5,6 +5,16 @@ export default {
     return fetch(API_URL)
       .then(res => res.json());
   },
+  getAlbum(id) {
+    return fetch(`${API_URL}/${id}`)
+      .then(res => Promise.all([res.ok, res.json()]))
+      .then(([ok, json]) => {
+        if (!ok) throw new Error(json);
+
+        return json;
+      });
+  },
+
   addAlbum(album) {
     return fetch(API_URL, {
       method: 'POST',
@@ -23,7 +33,7 @@ export default {
   removeAlbum(id) {
     return fetch(API_URL, {
       method: 'DELETE',
-      body: id,
+      body: JSON.stringify(id),
       headers: new Headers({
         'Content-Type': 'application/json',
       })

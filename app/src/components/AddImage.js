@@ -18,7 +18,7 @@ class AddImage extends Component {
       title: '',
       description: '',
       url: ''
-    }
+    };
   }
 
   reset() {
