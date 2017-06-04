@@ -2,22 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-export default function Album ({ name, url, onDelete, _id }) {
-  return <li>
-          <Link to={url}>
-            {name}
-          </Link>
-          <button 
-            onClick={() => onDelete(_id)}
-            className="Album-list-delete-button"
-          >
-            🗑
+export default function Album ({ name, to, onDelete, _id }) {
+  return (
+    <li>
+      <Link to={to}>
+        {name}
+      </Link>
+      <button
+        onClick={() => onDelete(_id)}
+        className="Album-list-delete-button"
+      >
+        🗑
           </button>
-        </li>;
+    </li>
+  );
 }
 
 Album.propTypes = {
-  name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  // name: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired
-}
+};
