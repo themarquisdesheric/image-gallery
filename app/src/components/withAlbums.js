@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import albumsApi from '../services/albumsApi';
 import LoadingSpinner from './LoadingSpinner';
 
 export default function withAlbums(ComposedComponent) {
@@ -14,8 +15,7 @@ export default function withAlbums(ComposedComponent) {
     }
 
     componentDidMount() {
-      fetch('/albums')
-        .then(res => res.json())
+      albumsApi.getAll()
         .then(albums => this.setState({ albums }));
     }
 

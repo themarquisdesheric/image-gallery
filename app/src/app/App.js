@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import AppHeader from './components/AppHeader';
-import Home from './components/Home';
-import Albums from './components/Albums';
+import AppHeader from '../components/AppHeader';
+import Home from '../components/Home';
+import Albums from '../components/Albums';
 import './App.css';
 
 class App extends Component {
