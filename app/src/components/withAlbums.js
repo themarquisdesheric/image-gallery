@@ -14,28 +14,12 @@ export default function withAlbums(ComposedComponent) {
     }
 
     componentDidMount() {
-      this.getAlbums();
-    }
-
-    getAlbums() {
       fetch('/albums')
         .then(res => res.json())
         .then(albums => this.setState({ albums }));
     }
 
     handleAddAlbum(album) {
-      // dataApi.addAlbum(album)
-      //   .then(albums => this.setState({ albums }));
-      // fetch('/albums', { 
-      //   method: 'POST', 
-      //   body: JSON.stringify(album)
-      // })
-      // .then(res => res.json())
-      //   .then(savedAlbum => {
-      //     console.log('SAVED', savedAlbum);
-      //     this.getAlbums();
-      //   });
-
       return fetch('/albums', {
         method: 'POST',
         body: JSON.stringify(album),
@@ -47,7 +31,9 @@ export default function withAlbums(ComposedComponent) {
         .then(([ok, json]) => {
           if (!ok) throw new Error(json);
 
-          this.getAlbums();
+          this.setState({
+            albums: [...this.state.albums, json]
+          });
         });
 
     }
