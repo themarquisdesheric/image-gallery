@@ -25,4 +25,18 @@ app.get('/albums', (req, res) => {
     });
 });
 
+app.get('/albums/:id', (req, res) => {
+  const _id = new ObjectId(req.params.id);
+
+  connection.db.collection('albums')
+    .findOne({ _id })
+    .then(album => {
+      if (!album) {
+        res.status(404).send({ error: 'resource not found' });
+      } else {
+        res.send(album);
+      }
+    });
+});
+
 module.exports = app;

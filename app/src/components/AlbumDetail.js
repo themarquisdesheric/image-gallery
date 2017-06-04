@@ -23,7 +23,11 @@ export default class AlbumDetail extends Component {
   }
 
   getAlbum(id) {
-    
+    fetch(`/albums/${id}`)
+      .then(res => res.json())
+      .then(album => {
+        if (album) this.setState({ album });
+      });
   }
 
   handleAdd(image) {
