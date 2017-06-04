@@ -39,4 +39,11 @@ app.get('/albums/:id', (req, res) => {
     });
 });
 
+app.post('/albums', (req, res) => {
+  connection.db.collection('albums')
+    .insert(req.body)
+    .then(res => res.ops[0])
+    .then(savedAlbum => res.send(savedAlbum));
+});
+
 module.exports = app;

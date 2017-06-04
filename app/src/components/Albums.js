@@ -16,7 +16,11 @@ export default class Albums extends Component {
   }
 
   componentDidMount() {
-    return fetch('/albums')
+    this.getAlbums();
+  }
+
+  getAlbums() {
+    fetch('/albums')
       .then(res => res.json())
       .then(albums => this.setState({ albums }));
   }
@@ -24,6 +28,30 @@ export default class Albums extends Component {
   handleAddAlbum(album) {
     // dataApi.addAlbum(album)
     //   .then(albums => this.setState({ albums }));
+    // fetch('/albums', { 
+    //   method: 'POST', 
+    //   body: JSON.stringify(album)
+    // })
+    // .then(res => res.json())
+    //   .then(savedAlbum => {
+    //     console.log('SAVED', savedAlbum);
+    //     this.getAlbums();
+    //   });
+
+    return fetch('/albums', {
+      method: 'POST',
+      body: JSON.stringify(album),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+      })
+    })
+    .then(res => Promise.all([res.ok, res.json()]))
+    .then(([ok, json]) => {
+      if(!ok) throw new Error(json);
+
+      this.getAlbums();
+    });
+      
   }
 
   handleDeleteAlbum(id) {

@@ -14,7 +14,7 @@ class AddAlbum extends Component {
   static propTypes = { onAdd: PropTypes.func.isRequired }
 
   getInitialState() {
-    return { name: '' }
+    return { name: '' };
   }
 
   reset() {
@@ -36,10 +36,11 @@ class AddAlbum extends Component {
       <div className="Add">
         <form 
           onSubmit={e => {
-          e.preventDefault();
-          this.props.onAdd(this.state);
-          this.reset();
-        }}>
+            e.preventDefault();
+            this.props.onAdd(this.state);
+            this.reset();
+          }}
+        >
           <fieldset>
             <legend>
               <h2 className="Add-header">
