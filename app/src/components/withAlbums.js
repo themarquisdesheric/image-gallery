@@ -20,22 +20,12 @@ export default function withAlbums(ComposedComponent) {
     }
 
     handleAddAlbum(album) {
-      return fetch('/albums', {
-        method: 'POST',
-        body: JSON.stringify(album),
-        headers: new Headers({
-          'Content-Type': 'application/json',
-        })
-      })
-        .then(res => Promise.all([res.ok, res.json()]))
-        .then(([ok, json]) => {
-          if (!ok) throw new Error(json);
-
+      albumsApi.addAlbum(album)
+        .then(saved => {
           this.setState({
-            albums: [...this.state.albums, json]
+            albums: [...this.state.albums, saved]
           });
         });
-
     }
 
     handleDeleteAlbum() {
