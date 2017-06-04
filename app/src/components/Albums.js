@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import dataApi from '../dataApi';
 import LoadingSpinner from './LoadingSpinner';
 import Album from './Album';
 import AlbumDetail from './AlbumDetail';
@@ -17,28 +16,27 @@ export default class Albums extends Component {
   }
 
   componentDidMount() {
-    // dataApi.getAll().then(albums => this.setState({ albums }));
-    fetch('/albums')
+    return fetch('/albums')
       .then(res => res.json())
-      .then(res => console.log(res));
-  }
-
-  handleAddAlbum(album) {
-    dataApi.addAlbum(album)
       .then(albums => this.setState({ albums }));
   }
 
-  handleDeleteAlbum(id) {
-    dataApi.deleteAlbum(id)
-      .then(() => {
-        const copiedAlbums = this.state.albums.slice();
-        const index = copiedAlbums.findIndex(album => album._id === id);
-        
-        copiedAlbums.splice(index, 1);
-        this.setState({ albums: copiedAlbums });
+  handleAddAlbum(album) {
+    // dataApi.addAlbum(album)
+    //   .then(albums => this.setState({ albums }));
+  }
 
-        if (this.props.location.pathname.endsWith(id)) this.props.history.push('/albums')
-      });
+  handleDeleteAlbum(id) {
+    // dataApi.deleteAlbum(id)
+    //   .then(() => {
+    //     const copiedAlbums = this.state.albums.slice();
+    //     const index = copiedAlbums.findIndex(album => album._id === id);
+        
+    //     copiedAlbums.splice(index, 1);
+    //     this.setState({ albums: copiedAlbums });
+
+    //     if (this.props.location.pathname.endsWith(id)) this.props.history.push('/albums');
+    //   });
   }
 
   render() {
