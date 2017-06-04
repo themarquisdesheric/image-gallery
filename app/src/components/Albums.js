@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import withAlbums from './withAlbums';
-import LoadingSpinner from './LoadingSpinner';
 import Album from './Album';
 import AlbumDetail from './AlbumDetail';
 import AddAlbum from './AddAlbum';

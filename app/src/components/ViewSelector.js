@@ -5,13 +5,13 @@ import List from './List';
 import Thumbnail from './Thumbnail';
 import Gallery from './Gallery';
 
-const views = { List, Thumbnail, Gallery }
+const views = { List, Thumbnail, Gallery };
 
 class ViewSelector extends Component {
   constructor(props) {
     super(props);
 
-    this.state = { CurrentView: Gallery }
+    this.state = { CurrentView: Gallery };
 
     this.handleChangeView = this.handleChangeView.bind(this);
   }
@@ -30,7 +30,7 @@ class ViewSelector extends Component {
     let { data, onDelete } = this.props;
     const { CurrentView } = this.state;
 
-    if (!data) return <LoadingSpinner />
+    if (!data) return <LoadingSpinner />;
 
     return (
       <div>
@@ -40,7 +40,7 @@ class ViewSelector extends Component {
                     key={view}
                     onClick={this.handleChangeView}>
                       {view}
-                    </button>
+                    </button>;
           })}
         </div>
         <CurrentView 

@@ -46,4 +46,12 @@ app.post('/albums', (req, res) => {
     .then(savedAlbum => res.send(savedAlbum));
 });
 
+app.delete('/albums', (req, res) => {
+  console.log(req.body);
+  const _id = new ObjectId(req.body);
+  connection.db.collection('albums')
+    .deleteOne({ _id })
+    .then(result => res.send(result));
+});
+
 module.exports = app;
