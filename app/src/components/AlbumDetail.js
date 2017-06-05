@@ -30,13 +30,18 @@ export default class AlbumDetail extends Component {
       });
   }
 
-  handleAdd(image) {
+  handleAdd(image, match) {
     // dataApi.addImage(image)
     //   .then(img => {
     //     this.setState({
     //       album: {...this.state.album, images: [...this.state.album.images, img]}
     //     });
     //   });
+    console.log(match);
+    albumsApi.addImage(image, match)
+      .then(image => {
+        console.log(image);
+      });
   }
 
   handleDelete(id) {

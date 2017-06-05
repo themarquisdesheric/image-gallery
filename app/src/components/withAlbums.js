@@ -30,8 +30,15 @@ export default function withAlbums(ComposedComponent) {
 
     handleDeleteAlbum(id) {
       return albumsApi.removeAlbum(id)
-        .then(res => console.log('RESULT FROM WITHALBUMS', res))
-        .catch(err => console.log(err));
+        .then(() => {
+          const copiedAlbums = this.state.albums.slice();
+          const index = copiedAlbums.findIndex(album => album._id === id);
+          
+          copiedAlbums.splice(index, 1);
+          this.setState({ albums: copiedAlbums });
+
+          if (this.props.location.pathname.endsWith(id)) this.props.history.push('/albums');
+        });
     }
 
     render() {

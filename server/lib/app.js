@@ -46,12 +46,20 @@ app.post('/albums', (req, res) => {
     .then(savedAlbum => res.send(savedAlbum));
 });
 
-app.delete('/albums', (req, res) => {
-  console.log(req.body);
-  const _id = new ObjectId(req.body);
+app.delete('/albums/:id', (req, res) => {
+  console.log(req.params.id);
+  const _id = new ObjectId(req.params.id);
   connection.db.collection('albums')
     .deleteOne({ _id })
     .then(result => res.send(result));
+});
+
+app.post('/albums/:id', (req, res) => {
+  const albumId = req.params.id;
+  console.log(req.body, albumId);
+  // connection.db.collection('albums')
+  //   .insert
+  res.send('success');
 });
 
 module.exports = app;
