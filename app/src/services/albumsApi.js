@@ -33,7 +33,6 @@ export default {
   removeAlbum(id) {
     return fetch(`${API_URL}/${id}`, {
       method: 'DELETE',
-      body: JSON.stringify({id}),
       headers: new Headers({
         'Content-Type': 'application/json',
       })
@@ -49,6 +48,20 @@ export default {
     return fetch(`${API_URL}/${albumId}/images`, {
       method: 'POST',
       body: JSON.stringify(image),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+      })
+    })
+      .then(res => Promise.all([res.ok, res.json()]))
+      .then(([ok, json]) => {
+        if (!ok) throw new Error(json);
+
+        return json;
+      });
+  },
+  removeImage(imageId, albumId) {
+    return fetch(`${API_URL}/${albumId}/images/${imageId}`, {
+      method: 'DELETE',
       headers: new Headers({
         'Content-Type': 'application/json',
       })

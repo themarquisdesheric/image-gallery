@@ -59,10 +59,25 @@ app.post('/albums/:albumId/images', (req, res) => {
   connection.db.collection('albums')
     .findOneAndUpdate(
       { _id: albumId},
-      { $push: { images: req.body } },
+      { $push: { images: Object.assign({}, req.body, { _id: new ObjectId() }) } },
       { returnNewDocument: true }
     )
       .then(saved => res.send(saved.value));
+});
+
+app.delete('/albums/:albumId/images/:imageId', (req, res) => {
+  const albumId = new ObjectId(req.params.albumId);
+  const imageId = new ObjectId(req.params.imageId);
+  console.log(imageId);
+
+  connection.db.collection('albums')
+    .findOneAndUpdate(
+      { _id: albumId},
+      { $pull: { images: { _id: imageId } } },
+      { returnNewDocument: true }
+    )
+      .then(updated => res.send(updated));
+
 });
 
 module.exports = app;

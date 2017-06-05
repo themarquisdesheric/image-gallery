@@ -11,7 +11,7 @@ export default class AlbumDetail extends Component {
     this.state = { album: null };
 
     this.handleAddImage = this.handleAddImage.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
+    this.handleDeleteImage = this.handleDeleteImage.bind(this);
   }
 
   componentDidMount() {
@@ -32,20 +32,23 @@ export default class AlbumDetail extends Component {
 
   handleAddImage(image) {
     const albumId = this.props.match.params.albumId;
+
     albumsApi.addImage(image, albumId)
       .then(updatedAlbum => this.setState({ album: updatedAlbum }));
   }
 
-  handleDelete(id) {
-    // dataApi.deleteImage(id)
-    //   .then(() => {
-    //     const { album } = this.state;
-    //     const index = album.images.findIndex(img => img._id === id);
-    //     const copiedImages = album.images.slice();
+  handleDeleteImage(imageId) {
+    const albumId = this.props.match.params.albumId;
 
-    //     copiedImages.splice(index, 1)
-    //     this.setState({ album: {...this.state.album, images: copiedImages} });
-    //   });
+    albumsApi.removeImage(imageId, albumId)
+      .then(() => {
+        const { album } = this.state;
+        const index = album.images.findIndex(img => img._id === imageId);
+        const copiedImages = album.images.slice();
+
+        copiedImages.splice(index, 1);
+        this.setState({ album: {...this.state.album, images: copiedImages} });
+      });
   }
 
   render() {
@@ -58,7 +61,7 @@ export default class AlbumDetail extends Component {
         <h2>{album.name}</h2>
         <ViewSelector 
           data={album.images} 
-          onDelete={this.handleDelete}
+          onDelete={this.handleDeleteImage}
           history={this.props.history}
         />
         <AddImage onAdd={this.handleAddImage}/>
