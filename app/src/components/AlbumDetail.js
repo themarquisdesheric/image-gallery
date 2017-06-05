@@ -10,7 +10,7 @@ export default class AlbumDetail extends Component {
 
     this.state = { album: null };
 
-    this.handleAdd = this.handleAdd.bind(this);
+    this.handleAddImage = this.handleAddImage.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
@@ -30,18 +30,10 @@ export default class AlbumDetail extends Component {
       });
   }
 
-  handleAdd(image, match) {
-    // dataApi.addImage(image)
-    //   .then(img => {
-    //     this.setState({
-    //       album: {...this.state.album, images: [...this.state.album.images, img]}
-    //     });
-    //   });
-    console.log(match);
-    albumsApi.addImage(image, match)
-      .then(image => {
-        console.log(image);
-      });
+  handleAddImage(image) {
+    const albumId = this.props.match.params.albumId;
+    albumsApi.addImage(image, albumId)
+      .then(updatedAlbum => this.setState({ album: updatedAlbum }));
   }
 
   handleDelete(id) {
@@ -69,7 +61,7 @@ export default class AlbumDetail extends Component {
           onDelete={this.handleDelete}
           history={this.props.history}
         />
-        <AddImage onAdd={this.handleAdd}/>
+        <AddImage onAdd={this.handleAddImage}/>
       </div>
     );
   }

@@ -5,18 +5,6 @@ import withAlbums from './withAlbums';
 import Album from './Album';
 import AlbumDetail from './AlbumDetail';
 import AddAlbum from './AddAlbum';
-  
-  // handleDeleteAlbum(id) {
-    // dataApi.deleteAlbum(id)
-    //   .then(() => {
-    //     const copiedAlbums = this.state.albums.slice();
-    //     const index = copiedAlbums.findIndex(album => album._id === id);
-        
-    //     copiedAlbums.splice(index, 1);
-    //     this.setState({ albums: copiedAlbums });
-
-    //     if (this.props.location.pathname.endsWith(id)) this.props.history.push('/albums');
-    //   });
 
 function Albums({ albums, match, onAdd, onDelete }) {
   return (

@@ -41,25 +41,28 @@ app.get('/albums/:id', (req, res) => {
 
 app.post('/albums', (req, res) => {
   connection.db.collection('albums')
-    .insert(req.body)
+    .insert(Object.assign({}, req.body, { images: []}))
     .then(res => res.ops[0])
     .then(savedAlbum => res.send(savedAlbum));
 });
 
 app.delete('/albums/:id', (req, res) => {
-  console.log(req.params.id);
   const _id = new ObjectId(req.params.id);
   connection.db.collection('albums')
     .deleteOne({ _id })
     .then(result => res.send(result));
 });
 
-app.post('/albums/:id', (req, res) => {
-  const albumId = req.params.id;
-  console.log(req.body, albumId);
-  // connection.db.collection('albums')
-  //   .insert
-  res.send('success');
+app.post('/albums/:albumId/images', (req, res) => {
+  const albumId = new ObjectId(req.params.albumId);
+
+  connection.db.collection('albums')
+    .findOneAndUpdate(
+      { _id: albumId},
+      { $push: { images: req.body } },
+      { returnNewDocument: true }
+    )
+      .then(saved => res.send(saved.value));
 });
 
 module.exports = app;

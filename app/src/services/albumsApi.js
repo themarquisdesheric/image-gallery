@@ -16,7 +16,6 @@ export default {
   },
 
   addAlbum(album) {
-    console.log('albummm', album);
     return fetch(API_URL, {
       method: 'POST',
       body: JSON.stringify(album),
@@ -46,9 +45,8 @@ export default {
         return json;
       });
   },
-  addImage(image) {
-    console.log('image from API', image);
-    return fetch(API_URL, {
+  addImage(image, albumId) {
+    return fetch(`${API_URL}/${albumId}/images`, {
       method: 'POST',
       body: JSON.stringify(image),
       headers: new Headers({
