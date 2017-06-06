@@ -1,4 +1,4 @@
-const API_URL = '/albums';
+const API_URL = '/api/albums';
 
 export default {
   getAll() {
