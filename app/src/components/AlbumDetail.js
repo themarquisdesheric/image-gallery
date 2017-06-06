@@ -34,7 +34,11 @@ export default class AlbumDetail extends Component {
     const albumId = this.props.match.params.albumId;
 
     albumsApi.addImage(image, albumId)
-      .then(updatedAlbum => this.setState({ album: updatedAlbum }));
+      .then(updatedImages => {
+        this.setState({ 
+          album: Object.assign({}, this.state.album, { images: updatedImages })
+        });
+      });
   }
 
   handleDeleteImage(imageId) {

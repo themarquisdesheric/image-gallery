@@ -7,7 +7,7 @@ class Gallery extends Component {
   constructor(props) {
     super(props);
     
-    this.state = { index: 0 }
+    this.state = { index: 0 };
 
     this.handleGoToPreviousImage = this.handleGoToPreviousImage.bind(this);
     this.handleGoToNextImage = this.handleGoToNextImage.bind(this);
@@ -35,9 +35,12 @@ class Gallery extends Component {
   render() {
     let { data, onDelete } = this.props;
 
-    if (!data.length) return <OutOfBunnies />
+    if (!data.length) return <OutOfBunnies />;
 
     let currentImage = data[this.state.index];
+
+    if (!currentImage) return null;
+    
     let { title, description, url, _id } = currentImage;
 
     return (

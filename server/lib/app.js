@@ -48,6 +48,7 @@ app.post('/albums', (req, res) => {
 
 app.delete('/albums/:id', (req, res) => {
   const _id = new ObjectId(req.params.id);
+
   connection.db.collection('albums')
     .deleteOne({ _id })
     .then(result => res.send(result));
@@ -60,15 +61,14 @@ app.post('/albums/:albumId/images', (req, res) => {
     .findOneAndUpdate(
       { _id: albumId},
       { $push: { images: Object.assign({}, req.body, { _id: new ObjectId() }) } },
-      { returnNewDocument: true }
+      { returnOriginal: false }
     )
-      .then(saved => res.send(saved.value));
+      .then(saved => res.send(saved.value.images));
 });
 
 app.delete('/albums/:albumId/images/:imageId', (req, res) => {
   const albumId = new ObjectId(req.params.albumId);
   const imageId = new ObjectId(req.params.imageId);
-  console.log(imageId);
 
   connection.db.collection('albums')
     .findOneAndUpdate(
