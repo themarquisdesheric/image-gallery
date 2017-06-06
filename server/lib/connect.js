@@ -1,3 +1,4 @@
+/* eslint no-console: "off" */
 const mongo = require('mongodb').MongoClient;
 
 const connect = {

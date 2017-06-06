@@ -19,7 +19,7 @@ export default function Album ({ name, to, onDelete, _id }) {
 }
 
 Album.propTypes = {
-  // name: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   to: PropTypes.string.isRequired,
   onDelete: PropTypes.func.isRequired
 };

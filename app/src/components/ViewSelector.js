@@ -18,6 +18,17 @@ class ViewSelector extends Component {
 
   static propTypes = { data: PropTypes.array.isRequired }
 
+  componentDidMount() {
+    const { history } = this.props;
+
+    if (history.location.search) {
+      let lastView = history.location.search.slice(6);
+      const View = views[lastView];
+      
+      this.setState({ CurrentView: View });
+    }
+  }
+
   handleChangeView({ target }) {
     const view = target.textContent;
     const View = views[view];
