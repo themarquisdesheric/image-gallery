@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a snapshot 1`] = `
+<div
+  className="App"
+>
+  <div>
+    <h1
+      className="App-header"
+    >
+      <span
+        aria-label="bunny"
+        role="img"
+      >
+        🐰
+      </span>
+      Image Gallery
+      <span
+        aria-label="bunny"
+        role="img"
+      >
+        🐰
+      </span>
+    </h1>
+    <nav>
+      <ul
+        className="Nav-list"
+      >
+        <li>
+          <a
+            className="selected"
+            href="/"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            className={undefined}
+            href="/albums"
+            onClick={[Function]}
+            style={undefined}
+          >
+            Albums
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div>
+    <h2>
+      Home
+    </h2>
+    <p>
+      Welcome to the Image Gallery!
+    </p>
+  </div>
+</div>
+`;

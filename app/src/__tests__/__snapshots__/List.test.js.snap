@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List renders a list 1`] = `
+<div>
+  <ul>
+    <li
+      className="list-title"
+    >
+      Black & Tan
+    </li>
+    <li>
+      <a
+        href=""
+      >
+        http://f.cl.ly/items/3g3J1G0w122M360w380O/3726490195_f7cc75d377_o.jpg
+      </a>
+    </li>
+    <li>
+      Seriously heart-melting black and tan bunny... OMG &lt;3
+    </li>
+    <li>
+      <button
+        className="delete-button"
+        onClick={[Function]}
+      >
+        Delete 🗑
+      </button>
+    </li>
+  </ul>
+</div>
+`;
